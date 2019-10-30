@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="sample-mule-app-test-suite.xml" />
+	<munit:test name="sample-mule-app-test-suite-sample-mule-appFlowTest" doc:id="0f1b117d-1a8b-42b3-81a9-4986987192eb" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to sample-mule-appFlow" doc:id="fcc1d0f3-465e-4fd6-9491-58dd0bf21404" name="sample-mule-appFlow"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:verify-call doc:name="Verify call" doc:id="b4d375a7-1aac-4a1a-a467-8c4b39fc7c9b" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="76c2307d-936e-4ba6-b310-9cfcf8e86107" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+
+</mule>
