@@ -10,6 +10,11 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="sample-mule-appFlow" doc:id="2c936d0c-3c5a-4a16-b2bf-8ddffbb5beef" >
 		<http:listener doc:name="Listener" doc:id="7e8827ac-cc2c-4cc8-83de-82d33ff86bde" config-ref="HTTP_Listener_config" path="hello"/>
 		<set-payload value="#[payload]" doc:name="Set Payload Hello World" doc:id="b2d70ad0-8a50-458a-a631-e9844c94a4e9" />
+		<flow-ref doc:name="call-subflow-log" doc:id="1f68fe53-186e-4c53-9b67-3f0d5ae0ee6d" name="subflow-log"/>
 		<logger level="INFO" doc:name="Logger for Payload" doc:id="76c2307d-936e-4ba6-b310-9cfcf8e86107" />
 	</flow>
+	<sub-flow name="subflow-log" doc:id="f1529d45-f094-405f-a127-62cbafd1289e" >
+		<logger level="INFO" doc:name="Logger Subflow Entry" doc:id="2a59ad01-e7bf-4665-857e-2d9a7efc0972" message="subflow-log.entry"/>
+		<logger level="INFO" doc:name="Logger Subflow Exit" doc:id="686a58bb-a473-422c-8703-15208f8336e5" message="subflow-log.exit"/>
+	</sub-flow>
 </mule>
