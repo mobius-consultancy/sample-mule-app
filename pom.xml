@@ -28,7 +28,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<muleVersion>${app.runtine}</muleVersion>
+						<muleVersion>${app.runtime}</muleVersion>
 						<username>mobiusconsultancy2</username>
 						<password>myP@ssw0rd</password>
 						<environment>Sandbox</environment>
